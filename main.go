@@ -1,11 +1,14 @@
 package main
 
 import (
-	"github.com/Thelvaen/SimpleCD/config"
+	_ "SimpleCD/routers"
+
+	beego "github.com/beego/beego/v2/server/web"
 )
 
-var ()
-
 func init() {
-	config, err := config.ReadConfig()
+}
+
+func main() {
+	beego.Run()
 }
