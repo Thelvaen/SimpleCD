@@ -8,6 +8,15 @@ type MainController struct {
 	beego.Controller
 }
 
-func (c *MainController) Get() {
+type GitHook struct {
+	Token string `form:"X-Gitlab-Token"`
+	Event string `form:"X-Gitlab-Event"`
+}
+
+func (c *MainController) Post() {
 	// Do some magic here
+	if err := c.ParseForm(&u); err != nil {
+		//handle error
+	}
+	c.Abort("403")
 }
